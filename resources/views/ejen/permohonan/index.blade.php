@@ -14,6 +14,10 @@
                     {{ __('Permohonan Baru') }}
 
                     <div class="float-right">
+
+                    <!-- nak buat button* -->
+                    <a class="btn btn-link" href="/ejen/senarai-permohonan">+ Cipta</a>
+
                         <form action="" method="">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword') }}">

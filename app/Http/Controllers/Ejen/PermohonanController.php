@@ -11,7 +11,8 @@ class PermohonanController extends Controller
    public function index()
    {
        //liss all aunthenticate permohonan
-       $senarai_permohonan = auth()->user()->permohonan()->paginate();
+       //$senarai_permohonan = auth()->user()->permohonan()->paginate();
+       $senarai_permohonan = Permohonan::paginate();
 
        return view('ejen.permohonan.index', compact('senarai_permohonan'));
    } 
@@ -33,7 +34,7 @@ class PermohonanController extends Controller
 
         
         // return permohonan index
-        return redirect()->to('ejen/senarai-permohonan')->with([
+        return redirect()->to('ejen/cipta-permohonan')->with([
             'type' => 'alert-primary',
             'message' => 'Berjaya simpan ejen'
         ]);

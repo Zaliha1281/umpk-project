@@ -44,9 +44,19 @@
                                     <td> {{ $todo->created_at->diffForHumans() }}</td>
                                     <td> {{ $todo->user->name }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="/todos/{{ $todo->id}}">Show</a>
-                                        <a class="btn btn-success" href="/todos/{{ $todo->id}}/edit">Edit</a>
-                                        <a onclick="return confirm('Are you sure')" class="btn btn-danger" href="/todos/{{ $todo->id}}/delete">Delete</a>
+                                        @can('show',$todo)
+                                            <a class="btn btn-primary" href="/todos/{{$todo->id}}">Show</a>
+                                        @endcan
+                                        @can('edit',$todo)
+                                            <a class="btn btn-success" href="/todos/{{$todo->id}}/edit">Edit</a>
+                                        @endcan
+                                        @can('delete',$todo)
+                                            <a onclick="return confirm('Are you sure')" class="btn btn-danger" href="/todos/{{$todo->id}}">Delete</a>
+                                        @endcan
+                                        <hr>
+                                        @can('delete',$todo)
+                                            <a onclick="return confirm('Are you sure you want to force delete')" class="btn btn-danger" href="/todos/{{$todo->id}}/force-delete">FORCE Delete</a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
