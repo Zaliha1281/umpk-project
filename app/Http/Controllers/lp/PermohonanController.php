@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Ejen;
+namespace App\Http\Controllers\lp;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,14 +16,14 @@ class PermohonanController extends Controller
        //$senarai_permohonan = auth()->user()->permohonan()->paginate();
        $senarai_permohonan = Permohonan::paginate();
 
-       return view('ejen.permohonan.index', compact('senarai_permohonan'));
+       return view('lp.permohonan.index', compact('senarai_permohonan'));
    } 
    
    
     public function create()
     {
         // show permohonan create form
-        return view('ejen.permohonan.create');
+        return view('lp.permohonan.create');
     }
 
 
@@ -36,9 +36,9 @@ class PermohonanController extends Controller
 
         
         // return permohonan index
-        return redirect()->to('ejen/cipta-permohonan')->with([
+        return redirect()->to('lp/senarai-permohonan')->with([
             'type' => 'alert-primary',
-            'message' => 'Berjaya simpan ejen'
+            'message' => 'Berjaya simpan lp'
         ]);
 
     }

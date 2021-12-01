@@ -22,16 +22,16 @@ class CreateTablePermohonan extends Migration
             $table->foreign('user_id')->references('id')->on('users');
 
             //buat relationship
-            $table->unsignedBigInteger('kategori_permohonan_id');
+            $table->unsignedBigInteger('kategori_permohonan_id')->nullable();
             $table->foreign('kategori_permohonan_id')->references('id')->on('table_kategori_permohonan');
 
-            $table->String('jenis_agen');
-            $table->String('jenis_mohon');
-            $table->String('no_rujukan');
-            $table->String('perakuan');
-            $table->String('tarikh_mohon');
-            $table->String('tarikh_kemaskini');
-            $table->String('status_permohonan');
+            $table->string('jenis_agen')->nullable();;
+            $table->string('jenis_mohon')->nullable();;
+            $table->string('no_rujukan')->nullable();;
+            $table->string('perakuan')->nullable();;
+            $table->string('tarikh_mohon')->nullable();;
+            $table->string('tarikh_kemaskini')->nullable();;
+            $table->string('status_permohonan')->nullable();;
         });
     }
 

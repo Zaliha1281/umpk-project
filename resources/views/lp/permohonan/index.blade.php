@@ -16,7 +16,7 @@
                     <div class="float-right">
 
                     <!-- nak buat button* -->
-                    <a class="btn btn-link" href="/ejen/senarai-permohonan">+ Cipta</a>
+                    <a class="btn btn-link" href="/lp/cipta-permohonan">+ Cipta</a>
 
                         <form action="" method="">
                             <div class="input-group">
@@ -33,9 +33,6 @@
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Nama</th>
-                            <th>Jenis ejen</th>
-                            <th>Created</th>
                             <th>Creator</th>
                             <th>Actions</th>
                         </thead>
@@ -43,9 +40,7 @@
                             @foreach ($senarai_permohonan as $permohonan)
                                 <tr>
                                     <td> {{ $permohonan->id }}</td>
-                                    <td> {{ $permohonan->title }}</td>
-                                    <td> {{ $permohonan->description }}</td>
-                                    <td> {{ $permohonan->created_at->diffForHumans() }}</td>
+        
                                     <td> {{ $permohonan->user->name }}</td>
                                     <td>
                                         <a class="btn btn-primary" href="/permohonan/{{ $permohonan->id}}">Show</a>

@@ -14,16 +14,11 @@
                             <label>Title</label>
                             <input type="text" name="title" class="form-control" placeholder="Please enter todo title">
                         </div>
+                        
+
+                        
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Attachment</label>
-                            <input type="file" name="attachment" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Mohon</button>
+                            <button type="submit" class="btn btn-primary">Mohon!</button>
                         </div>
                     </form>
                 </div>

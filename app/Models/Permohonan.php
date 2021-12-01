@@ -31,7 +31,7 @@ class Permohonan extends Model
      //4
      public function user()
      {
-         return $this->belongsTo(User::class, 'permohonan_id', 'id');
+         return $this->belongsTo(User::class, 'user_id', 'id');
      }
 
      //5
