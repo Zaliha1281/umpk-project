@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Todo;
 use File;
 use Storage;
+use Mail;
+use App\Mail\TodoCreatedMail;
+use App\Jobs\SendEmailJob;
+
 
 class TodoController extends Controller
 {
@@ -65,6 +69,9 @@ class TodoController extends Controller
             $todo->save();
         }
 
+        //send email using job
+        dispatch(new SendEmailJob($todo));
+        
         // return todos index
         return redirect()->to('/todos')->with([
             'type' => 'alert-primary',
@@ -122,4 +129,6 @@ class TodoController extends Controller
             'message' => 'Successfuly force delete your todo!'
         ]);
     }
+
+    
 }
